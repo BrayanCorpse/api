@@ -17,10 +17,10 @@ class Cors
     {
         return $next($request)
         //Url a la que se le dará acceso en las peticiones
-       ->header("Access-Control-Allow-Origin", "https://apicrud-5a75a.web.app")
+       ->header("Access-Control-Allow-Origin", "*")
        //Métodos que a los que se da acceso
-       ->header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
+       ->header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS")
        //Headers de la petición
-       ->header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, X-Token-Auth, Authorization"); 
+       ->header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, X-Token-Auth, Authorization"); 
     }
 }
