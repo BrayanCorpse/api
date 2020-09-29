@@ -55,7 +55,7 @@ class UsuariosController extends Controller
 
     public function showById($usuario_id){
 
-        $usuarios = DB::select('SELECT us.`usuario_id` AS id,us.foto,us.`name`,us.`apellidop`,us.`genero`,us.`email`,mar.`marca_id`,mar.`name` AS marca,mol.`modelo_id`,mol.`año` AS año
+        $usuarios = DB::select('SELECT us.`usuario_id` AS id,us.foto,us.`name`,us.`apellidop`,us.`apellidom`,us.`genero`,us.`telefono`,us.`email`,us.`password`,us.`placa`,us.`comentario`,mar.`marca_id`,mar.`name` AS marca,mol.`modelo_id`,mol.`año` AS año
         FROM usuarios AS us
         INNER JOIN marcas AS mar ON mar.`marca_id`=us.`marca_id`
         INNER JOIN modelos AS mol ON mol.`modelo_id`=us.`modelo_id`

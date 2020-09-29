@@ -17,49 +17,55 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+Route::group(['middleware' => ['cors']], function () {
 
-// mostrar todos los datos de la tabla usuarios
-Route::get('show','UsuariosController@show');
+    // mostrar todos los datos de la tabla usuarios
+    Route::get('show','UsuariosController@show');
 
-// mostrar todos los datos de la tabla Marcas
-Route::get('showMarks','UsuariosController@showMarks');
+    // mostrar todos los datos de la tabla Marcas
+    Route::get('showMarks','UsuariosController@showMarks');
 
-// mostrar todos los datos de la tabla Modelos
-Route::get('showModels','UsuariosController@showModels');
-
-
-// mostrar todos los datos de la tabla usuarios
-Route::get('show','UsuariosController@show');
-
-// mostrar algunos datos de la tabla usuarios con sus relaciones a otras tablas
-Route::get('showRelations','UsuariosController@showRelations');
-
-// mostrar los datos de la tabla usuarios paginando los registros
-Route::get('showPaginate','UsuariosController@showPaginate');
+    // mostrar todos los datos de la tabla Modelos
+    Route::get('showModels','UsuariosController@showModels');
 
 
-// mostrar algunos datos de la tabla usuarios con sus relaciones a otras tablas mediante el ID
-Route::get('showById/{usuario_id}','UsuariosController@showById');
+    // mostrar todos los datos de la tabla usuarios
+    Route::get('show','UsuariosController@show');
 
-// Crear un nuevo registro en la tabla usuario
-Route::post('store','UsuariosController@store');
+    // mostrar algunos datos de la tabla usuarios con sus relaciones a otras tablas
+    Route::get('showRelations','UsuariosController@showRelations');
 
-// Crear un nuevo registro en la tabla usuario de forma corta
-Route::post('storeShort','UsuariosController@storeShort');
-
-
-// Modificar un registro en la tabla usuario
-Route::put('update/{usuario_id}','UsuariosController@update');
-
-// Modificar un registro en la tabla usuario de forma corta
-Route::put('updateShort','UsuariosController@updateShort');
+    // mostrar los datos de la tabla usuarios paginando los registros
+    Route::get('showPaginate','UsuariosController@showPaginate');
 
 
-// Eliminar registros de la tabla usuarios
-Route::delete('delete/{usuario_id}','UsuariosController@delete');
+    // mostrar algunos datos de la tabla usuarios con sus relaciones a otras tablas mediante el ID
+    Route::get('showById/{usuario_id}','UsuariosController@showById');
 
-// Restaurar registros de la tabla usuarios
-Route::patch('restore/{usuario_id}','UsuariosController@restore');
+    // Crear un nuevo registro en la tabla usuario
+    Route::post('store','UsuariosController@store');
 
-// Eliminar fisicamente registros de la tabla usuarios
-Route::delete('forceDelete/{usuario_id}','UsuariosController@forceDelete');
+    // Crear un nuevo registro en la tabla usuario de forma corta
+    Route::post('storeShort','UsuariosController@storeShort');
+
+
+    // Modificar un registro en la tabla usuario
+    Route::put('update/{usuario_id}','UsuariosController@update');
+
+    // Modificar un registro en la tabla usuario de forma corta
+    Route::put('updateShort','UsuariosController@updateShort');
+
+
+    // Eliminar registros de la tabla usuarios
+    Route::delete('delete/{usuario_id}','UsuariosController@delete');
+
+    // Restaurar registros de la tabla usuarios
+    Route::patch('restore/{usuario_id}','UsuariosController@restore');
+
+    // Eliminar fisicamente registros de la tabla usuarios
+    Route::delete('forceDelete/{usuario_id}','UsuariosController@forceDelete');
+    
+});
+
+
+
